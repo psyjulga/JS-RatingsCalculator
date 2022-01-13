@@ -15,17 +15,18 @@ function collect_ratings() {
     let inputCountInt = parseInt(element.value, 10);
     ratings.count += inputCountInt;
 
-    ratings.sum = ratings.count * rating;
+    ratings.sum = inputCountInt * rating;
   });
 
   if (ratings.count !== 0) {
     ratings.average = ratings.sum / ratings.count;
-    return ratings;
   }
+  return ratings;
 }
 
 document.addEventListener("change", () => {
   const ratings = collect_ratings();
   let averageElem = document.querySelector("#average");
   averageElem.value = ratings.average.toFixed(2);
+  console.log(ratings);
 });
