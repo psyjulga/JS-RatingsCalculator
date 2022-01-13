@@ -15,7 +15,7 @@ function collect_ratings() {
     let inputCountInt = parseInt(element.value, 10);
     ratings.count += inputCountInt;
 
-    ratings.sum = inputCountInt * rating;
+    ratings.sum += inputCountInt * rating;
   });
 
   if (ratings.count !== 0) {
