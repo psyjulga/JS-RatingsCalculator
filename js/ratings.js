@@ -9,13 +9,9 @@ function collect_ratings() {
   const elements = document.querySelectorAll(".rating");
 
   elements.forEach(function (element) {
-    let removeStar = element.id.replace("star", "");
-    rating = parseInt(removeStar, 10);
-
-    let inputCountInt = parseInt(element.value, 10);
-    ratings.count += inputCountInt;
-
-    ratings.sum += inputCountInt * rating;
+    rating = parseInt(element.id.replace("star", ""), 10);
+    ratings.count += parseInt(element.value, 10);
+    ratings.sum += parseInt(element.value, 10) * rating;
   });
 
   if (ratings.count !== 0) {
